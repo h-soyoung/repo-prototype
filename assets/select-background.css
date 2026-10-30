@@ -1,0 +1,38 @@
+#select.screen {
+  isolation: isolate;
+  background: #f8ecf5 !important;
+}
+#select.screen::before {
+  content: "";
+  display: block !important;
+  position: absolute;
+  inset: auto 0 0;
+  height: 200%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+  filter: none;
+  background: linear-gradient(to top, #ddeab0 0%, #ddeab0 50%, rgba(221,234,176,0) 100%);
+  transform: translateY(var(--fill-shift, 100%));
+  transition: transform 2.4s cubic-bezier(.18,.72,.2,1);
+}
+#select.screen > .bar {
+  background-color: transparent !important;
+}
+#select.screen > .select-canvas,
+#select.rebuild-state-01.screen > .select-canvas {
+  z-index: 1;
+  background: transparent !important;
+}
+#select.screen > .select-canvas::before {
+  content: none !important;
+}
+#select .rebuild-drop-logo {
+  left: 50% !important;
+  top: calc(50% - 60px) !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  #select.screen::before { transition: none; }
+}

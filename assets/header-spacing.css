@@ -1,0 +1,93 @@
+/* The home screen has no subheader. */
+#home .home-story { overflow: clip; }
+#home.screen .home-story > .home-header.bar,
+#shop.screen > .shop-header,
+#detail.screen > .detail-header,
+#result.screen > .bar:not(.back),
+#purchase.screen > .bar:not(.back) {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  flex: 0 0 67px !important;
+}
+#select.screen > .bar:not(.back),
+#analysis.screen > .bar:not(.back) {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+:is(#home, #select, #analysis, #result, #shop, #detail, #purchase) :is(.home-header, .shop-header, .bar:not(.back)) {
+  width: 1920px !important;
+  height: 67px !important;
+  min-height: 67px !important;
+  box-sizing: border-box !important;
+  padding: 36px 62px 12px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  background: transparent !important;
+  color: #28476f !important;
+  z-index: 100 !important;
+}
+:is(#home, #select, #analysis, #result, #shop, #detail, #purchase) :is(.home-header, .shop-header, .bar:not(.back)) > span {
+  height: 19px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+  font-size: 16px !important;
+  line-height: 19px !important;
+}
+:is(#home, #select, #analysis, #result, #shop, #detail, #purchase) :is(.home-header, .shop-header, .bar:not(.back)) > span a {
+  margin: 0 !important;
+  line-height: 19px !important;
+  color: #28476f !important;
+}
+:is(#home, #select, #analysis, #result, #shop, #detail, #purchase) :is(.home-header, .shop-header, .bar:not(.back)) > .logo {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 88px !important;
+  height: 41px !important;
+  transform: translate(-50%, -50%) !important;
+}
+#shop.screen > .shop-subheader,
+#detail.screen > .detail-subheader,
+#result.screen > .bar.back,
+#purchase.screen > .bar.back {
+  position: sticky !important;
+  top: 79px !important;
+  margin-top: 12px !important;
+  flex: 0 0 53px !important;
+  z-index: 99 !important;
+}
+#detail.screen > .detail-subheader { left: 0 !important; right: auto !important; }
+:is(#select, #analysis, #result, #detail, #purchase) > .bar.back {
+  height: 53px !important;
+  min-height: 53px !important;
+  background-color: transparent !important;
+  background-image: url("figma/subheader-back.svg") !important;
+  background-position: 64px center !important;
+  background-size: 17px 15px !important;
+  background-repeat: no-repeat !important;
+}
+#select > .bar.back,
+#analysis > .bar.back {
+  top: 79px !important;
+}
+#detail > .detail-subheader {
+  top: 79px !important;
+}
+#result > .bar.back,
+#purchase > .bar.back,
+#shop > .shop-subheader {
+  margin-top: 12px !important;
+}
+#select > .select-canvas {
+  top: 132px !important;
+}
+#select .rebuild-drop-logo {
+  top: calc(50% - 66px) !important;
+}
+#detail > .detail-layout {
+  top: 132px !important;
+}

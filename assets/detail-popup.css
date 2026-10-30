@@ -1,0 +1,21 @@
+#detail > .figma-footer-spacer { flex: 0 0 1081px !important; height: 1081px !important; }
+:is(#detail, #shop) .cart-popup {
+  position:absolute; z-index:70; top:88px; left:1132px; width:728px;
+  box-sizing:border-box; padding:24px 36px; border-radius:24px;
+  background:#fff; color:#28476f; box-shadow:0 8px 32px rgba(40,71,111,.12);
+  font:400 14px/1.4 Pretendard,Arial,sans-serif;
+}
+:is(#detail, #shop) .cart-popup[hidden] { display:none; }
+:is(#detail, #shop) .cart-popup-heading { display:flex; justify-content:space-between; align-items:center; font-size:18px; font-weight:600; }
+:is(#detail, #shop) .cart-popup-close { width:32px; height:32px; border:0; padding:0; color:#28476f; background:transparent; font:26px/1 Arial,sans-serif; }
+:is(#detail, #shop) .cart-popup-items { display:grid; grid-template-columns:repeat(4,159px); gap:8px; margin:64px 0 28px; min-height:310px; }
+:is(#detail, #shop) .cart-popup-item { width:159px; font-size:12px; }
+:is(#detail, #shop) .cart-popup-item img { display:block; width:159px; height:211px; object-fit:cover; background:#d9d9d9; margin-bottom:16px; }
+:is(#detail, #shop) .cart-popup-item strong { display:block; font-size:14px; }
+:is(#detail, #shop) .cart-popup-item span { display:block; margin-top:4px; }
+:is(#detail, #shop) .cart-popup-quantity { text-align:center; margin-top:16px; }
+:is(#detail, #shop) .cart-popup-pages { display:flex; align-items:center; justify-content:center; gap:16px; }
+:is(#detail, #shop) .cart-popup-pages button { border:0; background:transparent; color:#f15ead; font-size:20px; }
+:is(#detail, #shop) .cart-popup-pages button:disabled { opacity:.35; }
+:is(#detail, #shop) .cart-popup-actions { display:flex; justify-content:center; gap:16px; margin-top:64px; }
+:is(#detail, #shop) .cart-popup-actions button { width:206px; height:48px; border:0; background:#28476f; color:#f8ecf5; font:400 14px Pretendard,Arial,sans-serif; }

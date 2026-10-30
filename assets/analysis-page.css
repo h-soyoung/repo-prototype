@@ -1,0 +1,10 @@
+#analysis.screen { background:#ddeab0!important; overflow:hidden!important; }
+#analysis .analysis-scene { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+#analysis .analysis-art { position:absolute; left:2px; top:-233px; width:1958px; height:1514px; }
+#analysis .analysis-art-inner { position:absolute; left:222px; top:-222px; width:1514px; height:1958px; transform:rotate(90deg) scaleY(-1); }
+#analysis .analysis-art-inner > img { display:block; width:1514px; height:1958px; object-fit:cover; }
+#analysis .analysis-tint { position:absolute; left:-36px; top:-17px; width:1956px; height:1195px; background:#ddeab0; mix-blend-mode:lighten; }
+#analysis .analysis-stars { position:absolute; inset:0; width:1514px; height:1958px; overflow:visible; }
+#analysis .analysis-copy { position:absolute!important; z-index:3; top:705px!important; left:50%!important; transform:translateX(-50%)!important; width:auto!important; min-height:0!important; margin:0!important; color:#f15ead!important; font:600 18px/1.2 Pretendard,Arial,sans-serif!important; letter-spacing:3px!important; white-space:pre!important; }
+#analysis .analysis-stars image { filter:drop-shadow(0 0 5px rgba(241,94,173,.65)); }
+@media (prefers-reduced-motion: reduce) { #analysis .analysis-stars { display:none; } }

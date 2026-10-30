@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "HomeKkubulim";
+  src: url("fonts/BMKkubulimTTF.ttf") format("truetype");
+  font-display: swap;
+}
+
+html:has(#home.active):root, body:has(#home.active):not(.unused) { background: #ddeab0 !important; }
+#home.screen {
+  width: 1920px !important;
+  height: calc(100vh / var(--screen-scale-x, 1)) !important;
+  min-height: 0 !important;
+  transform: scale(var(--screen-scale-x, 1)) !important;
+  transform-origin: top left !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  background: #ddeab0 !important;
+}
+#home.screen::-webkit-scrollbar { display: none; }
+#home .home-story {
+  position: relative;
+  width: 1920px;
+  height: 9268px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #ddeab0, #f8ecf5 24.519%);
+}
+#home .home-header.bar {
+  position: absolute !important;
+  z-index: 30 !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 1920px !important;
+  height: 107px !important;
+  padding: 36px 62px 0 !important;
+  box-sizing: border-box;
+  color: #28476f !important;
+  background: transparent !important;
+}
+#home .home-header a { color: #28476f !important; }
+#home .home-header .logo {
+  content: url("figma/home-header-original.svg") !important;
+  width: 176px !important;
+  height: 82px !important;
+}
+#home .story-position { position: absolute; z-index: 3; }
+#home .story-picture { position: relative; width: 100%; height: 100%; box-sizing: border-box; padding: 5px; overflow: hidden; }
+#home .story-picture::after { content: ""; position: absolute; inset: 2.5px; border: 5px solid #474191; filter: url("#home-rough-stroke"); pointer-events: none; }
+#home .story-picture img { display: block; width: 100%; height: 100%; object-fit: cover; }
+#home .story-picture img.story-flip { transform: scaleX(-1); }
+#home .story-one { left: 66px; top: 132px; width: 1134px; height: 1467px; }
+#home .story-two { left: 1114px; top: 1238px; width: 744px; height: 963px; }
+#home .story-three { left: 136px; top: 2053px; width: 1134px; height: 1467px; }
+#home .story-four { left: 1049px; top: 3006px; width: 734px; height: 950px; }
+#home .story-six-a { left: 573px; top: 5335px; width: 775px; height: 1003px; }
+#home .story-seven { left: 572px; top: 6338px; width: 774px; height: 1001px; }
+#home .story-wide-pair { position: absolute; left: -1px; top: 3168px; width: 1922px; height: 3614px; }
+#home .story-wide-bg, #home .story-wide-reflection, #home .story-last-bg { position: absolute; left: 0; width: 1922px; overflow: hidden; }
+#home .story-wide-bg { top: 0; height: 2485px; }
+#home .story-wide-bg img { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+#home .story-wide-reflection { top: 2485px; height: 1129px; transform: scaleY(-1); }
+#home .story-wide-reflection img { position: absolute; bottom: 0; width: 100%; height: 2485px; object-fit: cover; transform: scaleX(-1); }
+#home .story-last-bg { left: -1px; top: 6782px; height: 2486px; }
+#home .story-last-bg img { width: 100%; height: 100%; object-fit: cover; }
+#home .story-caption { position: absolute; z-index: 6; transform: translateX(-50%); white-space: nowrap; }
+#home .story-caption > div { position: relative; box-sizing: border-box; padding: 12px 24px; border: 5px solid transparent; background: #f6dede; background-clip: padding-box; color: #474191; font: 40px/1.4 "HomeKkubulim", sans-serif; text-align: center; }
+#home .story-caption > div::after { content: ""; position: absolute; inset: -5px; border: 5px solid #474191; filter: url("#home-rough-stroke"); pointer-events: none; }
+#home .caption-one { left: 1601px; top: 835px; }
+#home .caption-two { left: 560px; top: 1758px; }
+#home .caption-three { left: 1475px; top: 2676px; }
+#home .caption-four { left: 960px; top: 4528px; }
+#home .caption-five { left: 960px; top: 6298px; }
+#home .caption-six { left: 960px; top: 8828px; z-index: 9; pointer-events: none; }
+#home .home-portal {
+  position: absolute !important; inset: auto 0 0 !important;
+  width: 1920px !important; height: 1600px !important;
+  z-index: 8 !important; background: transparent !important;
+}
+/* Keep the story visible until both liquid textures have loaded. */
+#home .home-portal > .liquid-mask-host:not(.textures-ready) { visibility: hidden !important; }
+#home .home-portal > .liquid-mask-host { -webkit-mask-image: linear-gradient(to bottom, transparent, black 320px); mask-image: linear-gradient(to bottom, transparent, black 320px); }
+#home.home-reveals-ready .story-reveal {
+  opacity: 0;
+  translate: 0 150px;
+  scale: .85;
+  transition: opacity 1.35s ease, translate 1.65s cubic-bezier(.18,.85,.2,1.1), scale 1.65s cubic-bezier(.18,.85,.2,1.1);
+}
+#home.home-reveals-ready .story-reveal.is-visible { opacity: 1; translate: 0 0; scale: 1; }
+@media (prefers-reduced-motion: reduce) {
+  #home.home-reveals-ready .story-reveal { opacity: 1 !important; translate: none !important; scale: none !important; rotate: none !important; transition: none !important; }
+}
