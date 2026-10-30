@@ -39,7 +39,7 @@
     lastY = event.clientY;
     lastMoveAt = now;
 
-    if (now - movementStarted >= 5000) {
+    if (now - movementStarted >= 3000) {
       entered = true;
       navigate("select");
     }

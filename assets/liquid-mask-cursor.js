@@ -347,9 +347,11 @@ void main() {
   let width = 0;
   let height = 0;
   const resize = () => {
-    const w = Math.max(1, canvas.clientWidth || host.clientWidth);
-    const h = Math.max(1, canvas.clientHeight || host.clientHeight);
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = canvas.getBoundingClientRect();
+    const w = Math.max(1, rect.width || canvas.clientWidth || host.clientWidth);
+    const h = Math.max(1, rect.height || canvas.clientHeight || host.clientHeight);
+    const limit = gl.getParameter(gl.MAX_VIEWPORT_DIMS);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5, limit[0] / w, limit[1] / h);
     const bw = Math.round(w * dpr);
     const bh = Math.round(h * dpr);
     if (bw === canvas.width && bh === canvas.height) return;
@@ -364,6 +366,7 @@ void main() {
   resize();
   const ro = new ResizeObserver(resize);
   ro.observe(host);
+  window.addEventListener("resize", resize);
 
   const trailPoints = new Float32Array(TRAIL_COUNT * 2).fill(0.5);
   const current = { x: 0.5, y: 0.5 };
@@ -508,6 +511,7 @@ void main() {
     disposed = true;
     cancelAnimationFrame(raf);
     ro.disconnect();
+    window.removeEventListener("resize", resize);
     stopWhenHidden.disconnect();
     document.removeEventListener("visibilitychange", onVisibility);
     portal.removeEventListener("pointerenter", activate);
