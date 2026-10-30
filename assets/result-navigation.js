@@ -44,6 +44,9 @@
         alert("아직 저장된 테스트 결과가 없어요. 먼저 이미지 5장을 선택해 주세요.");
         return;
       }
+      if (!document.querySelector("#result")?.classList.contains("active")) {
+        window.alphaSkipResultAnimation = true;
+      }
       show("result");
       return;
     }
@@ -54,4 +57,16 @@
     show("home");
     document.querySelector("#home").scrollTop = 0;
   }, true);
+
+  document.querySelectorAll(".figma-footer-about").forEach((label) => {
+    const link = document.createElement("a");
+    link.className = label.className;
+    link.textContent = "About Us";
+    link.href = "https://instagram.com/r3po.seoul?cplk=MXd2dmQ1dmx5a3A2eg==";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.style.color = "inherit";
+    link.style.textDecoration = "none";
+    label.replaceWith(link);
+  });
 })();

@@ -28,7 +28,12 @@
     active = visible;
     clearInterval(timer);
     restore();
-    if (!visible || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!visible) return;
+    if (window.alphaSkipResultAnimation) {
+      window.alphaSkipResultAnimation = false;
+      return;
+    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const final = rows.map(({ number, meter }) => ({
       text: number.textContent,
